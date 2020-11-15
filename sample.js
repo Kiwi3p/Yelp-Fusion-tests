@@ -15,10 +15,22 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
 const searchRequest = {
-  term:'-+Farmers market',
-  location: 'Lisbon, pt',
+  term:'Farmers market',
+  //location: 'Lisbon, pt',
+  latitude: 38.7600325,   //input {{LAT}} data here
+  longitude: -9.1400807, //input {{LONG}} data here
+  radius: 5000, 
   limit: 8
 };
+
+const searchDeny = {
+  term: 'pingo doce',
+  latitude: 38.7600325,
+  longitude: -9.1400807,
+  radius: 5000,
+  limit: 8
+}
+
 
 const client = yelp.client(apiKey);
 
